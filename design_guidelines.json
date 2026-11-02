@@ -1,0 +1,145 @@
+{
+  "typography": {
+    "fonts": {
+      "headings": "Chivo",
+      "body": "IBM Plex Sans",
+      "mono": "IBM Plex Mono"
+    },
+    "rules": [
+      "No Inter, Roboto, or Space Grotesk.",
+      "Headings (Chivo) must have tight letter spacing (tracking-tight) and be bold/black.",
+      "Overlines/Labels (like 'Days done') must be uppercase, tiny, wide spacing (tracking-[0.2em]) using IBM Plex Mono.",
+      "Max heading size text-4xl for page titles, text-2xl for widget/habit titles.",
+      "Use typography to create tension; contrast massive sharp headers with neat monospaced metadata."
+    ]
+  },
+  "colors": {
+    "archetype": "Organic & Earthy + Neo-Brutalist Contrast",
+    "theme": "Light mode heavily preferred for this physical journal feel.",
+    "variables": {
+      "--background": "43 27% 94%",
+      "--foreground": "0 0% 10%",
+      "--card": "0 0% 100%",
+      "--card-foreground": "0 0% 10%",
+      "--popover": "0 0% 100%",
+      "--popover-foreground": "0 0% 10%",
+      "--primary": "11 65% 60%",
+      "--primary-foreground": "0 0% 100%",
+      "--secondary": "120 20% 85%",
+      "--secondary-foreground": "0 0% 10%",
+      "--border": "0 0% 10%",
+      "--input": "0 0% 10%",
+      "--ring": "0 0% 10%",
+      "--radius": "0px"
+    },
+    "guidelines": [
+      "Do NOT use generic SaaS blue. Use Terracotta (primary) and Pale Moss/Sage (secondary).",
+      "Never use pure black; use Obsidian/Charcoal (0 0% 10%) for borders and text.",
+      "Tint greys with warmth (sand/bone).",
+      "Background is a warm sand/bone white, creating a paper-like feel.",
+      "No full-screen gradients."
+    ]
+  },
+  "visual_enhancers": {
+    "surfaces": "Tactile Neo-Brutalism",
+    "rules": [
+      "Use 2px or 3px solid borders (border-2 border-foreground) on all cards, inputs, and buttons.",
+      "Hard Offset Shadows: Instead of soft drop shadows, use solid color block shadows. Add a custom utility or inline class like `shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]`.",
+      "NO glassmorphism on cards, only solid flat colors.",
+      "Square corners everywhere (`rounded-none`). No soft radii."
+    ]
+  },
+  "component_name": {
+    "strategy": "Shadcn components completely stripped of their default soft 'Vercel' look.",
+    "customizations": [
+      "Cards: Remove default shadow and radius. Add `border-2 border-foreground shadow-[4px_4px_0_0_#1a1a1a] bg-card`.",
+      "Inputs/Textareas: `border-2 border-foreground rounded-none shadow-[2px_2px_0_0_#1a1a1a] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-transform`.",
+      "Checkboxes (7-day): Make them large and chunky. `w-8 h-8 border-2 border-foreground`. When checked: `bg-primary text-white`.",
+      "Buttons: Pill shape is BANNED here. Use sharp rectangles with hard shadows.",
+      "Badges (Shared/Private): `border-2 border-foreground uppercase tracking-wider font-mono text-xs shadow-[2px_2px_0_0_#1a1a1a]`."
+    ]
+  },
+  "grids": {
+    "strategy": "High Density Grid (For Dashboards) mixed with Asymmetry",
+    "rules": [
+      "Habits List: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` with generous gap `gap-6` or `gap-8`.",
+      "Habit Detail Stats: Use a dense Bento grid for 'Last 7 days', 'Days done', and 'Current streak'.",
+      "Do not leave jagged bottoms. Use `h-full` on flex/grid children."
+    ]
+  },
+  "layouts": {
+    "structure": [
+      "Sidebar (Left): Fixed width (w-64), solid background, thick border-r-2 border-foreground.",
+      "Top Nav: Sticky height (h-16), solid background (no transparent), thick border-b-2 border-foreground.",
+      "Main Content: Generous spacing `p-8 lg:p-12`. Max-width constrained for readability."
+    ],
+    "alignment": [
+      "Left-align text heavy content (Habit descriptions, Comments).",
+      "Left-align forms.",
+      "Center-align empty state messages."
+    ]
+  },
+  "motion": {
+    "tactile_interactions": [
+      "Buttons on hover: slight -translate-y-1, increase shadow offset to 6px.",
+      "Buttons on active/click: translate-x-[4px] translate-y-[4px] shadow-none (presses the button into the shadow).",
+      "Staggered entrance animations for the habit list."
+    ],
+    "accessibility": [
+      "Respect prefers-reduced-motion.",
+      "Ensure focus-visible states have high contrast 2px outline and offset."
+    ]
+  },
+  "accessibility": {
+    "rules": [
+      "Minimum 4.5:1 contrast for normal text.",
+      "ALL interactive and key informational elements MUST have `data-testid` attribute (kebab-case, role-based).",
+      "Buttons must explicitly state text color on hover (e.g., `hover:text-white`).",
+      "Do not rely solely on color to indicate the 'Shared' vs 'Private' state; use distinct icon or explicit label."
+    ]
+  },
+  "media": {
+    "image_urls": {
+      "auth_banner": {
+        "url": "https://images.unsplash.com/photo-1730473360570-881f4bd1b2e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxjYWxtJTIwYWJzdHJhY3QlMjBvcmdhbmljJTIwc2hhcGVzfGVufDB8fHx8MTc5MzYzMjM0M3ww&ixlib=rb-4.1.0&q=85",
+        "category": "Hero / Auth Split Screen",
+        "description": "Soft pastel cream organic abstraction. Use as the left/right split background on the Sign Up/Sign In pages to contrast the harsh neobrutalist forms."
+      },
+      "empty_state": {
+        "url": "https://images.unsplash.com/photo-1688141585146-1fb4a1358c87?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxjYWxtJTIwYWJzdHJhY3QlMjBvcmdhbmljJTIwc2hhcGVzfGVufDB8fHx8MTc5MzYzMjM0M3ww&ixlib=rb-4.1.0&q=85",
+        "category": "Empty States",
+        "description": "Dark green organic shape. Use as a small graphic (e.g., rounded-full and bordered) when a user has no habits yet or the community feed is empty."
+      }
+    }
+  },
+  "3d_libraries": {
+    "decision": "Not required. A simple habit tracking app benefits from clarity and fast tactile interactions over 3D visual noise. Keep it 2D."
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Create standard React `.js` or `.jsx` files. You have .js files not .tsx files.",
+    "You are building a React frontend using Tailwind and Shadcn.",
+    "CRITICAL: Apply the Tactile Neo-Brutalist theme exactly as defined (thick borders, hard offset shadows, square corners).",
+    "Inject the defined CSS variables directly into index.css.",
+    "Do not add extra features like habit categories, complex graphs, or nested replies. Stick exactly to the requested functionality.",
+    "Use Phosphor Icons (@phosphor-icons/react) with duotone or bold weight to match the thick borders.",
+    "Ensure 'My Habits' and 'Community' navigation links exist in BOTH the sidebar and top header (for mobile responsiveness).",
+    "Habit list items must visually distinguish 'Shared' vs 'Private' prominently (e.g., a colored badge with sharp borders).",
+    "For the 7-day checkboxes in Habit Detail, display the dates (YYYY-MM-DD) clearly above or next to the chunky checkboxes.",
+    "Install required icon library: `yarn add @phosphor-icons/react`",
+    "Use `sonner` for toast notifications (`yarn add sonner` or via shadcn)."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy (using the hard offset shadows for this app).",
+    "You MUST NOT apply universal transition. Eg: `transition: all`. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add `.App { text-align: center; }` in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles (For this app: sharp rectangular buttons with hard offset shadows and press animations).",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Prioritize using pre-existing components from src/components/ui when applicable, but heavily customize them to fit the Neo-Brutalist theme.",
+    "All interactive and key informational elements MUST include a `data-testid` attribute."
+  ]
+}
